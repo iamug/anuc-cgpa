@@ -1,90 +1,136 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>APP</title>
-<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
-<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
-<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
-<script>
-    $( document ).on( "swipeleft swiperight", "#demo-page", function( e ) {
-        // We check if there is no open panel on the page because otherwise
-        // a swipe to close the left panel would also open the right panel (and v.v.).
-        // We do this by checking the data that the framework stores on the page element (panel: open).
-        if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
-            if ( e.type === "swipeleft" ) {
-                $( "#right-panel" ).panel( "open" );
-                
-                $.mobile.changePage('#info',{transition:"slide"});
-            } else if ( e.type === "swiperight" ) {
-                $( "#left-panel" ).panel( "open" );
+    <title>APP</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="img/anuc_high.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="ANUC CGPA - CGPA Application for All Nations University College (ANUC)." />
+    <link rel="manifest" href="manifest.json" />
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+    <script>
+        $(document).on("swipeleft swiperight", "#demo-page", function (e) {
+            // We check if there is no open panel on the page because otherwise
+            // a swipe to close the left panel would also open the right panel (and v.v.).
+            // We do this by checking the data that the framework stores on the page element (panel: open).
+            if ($(".ui-page-active").jqmData("panel") !== "open") {
+                if (e.type === "swipeleft") {
+                    $("#right-panel").panel("open");
+
+                    $.mobile.changePage('#info', { transition: "slide" });
+                } else if (e.type === "swiperight") {
+                    $("#left-panel").panel("open");
+                }
             }
-        }
-    });
-        $( document ).on( "swipeleft swiperight swipe", ".container", function( e ) {
-        // We check if there is no open panel on the page because otherwise
-        // a swipe to close the left panel would also open the right panel (and v.v.).
-        // We do this by checking the data that the framework stores on the page element (panel: open).
-        if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
-            if ( e.type === "swipeleft" ) {
-               // alert("left");
-            } else if ( e.type === "swiperight" ) {
-            
-                //$("#back1").click();
-                $.mobile.changePage('#demo-page',{transition:"slide",reverse:"true"});
-            } else if ( e.type === "swiped" ) {
-           // alert("tap");
-              //  $("#back1").click();
+        });
+        $(document).on("swipeleft swiperight swipe", ".container", function (e) {
+            // We check if there is no open panel on the page because otherwise
+            // a swipe to close the left panel would also open the right panel (and v.v.).
+            // We do this by checking the data that the framework stores on the page element (panel: open).
+            if ($(".ui-page-active").jqmData("panel") !== "open") {
+                if (e.type === "swipeleft") {
+                    // alert("left");
+                } else if (e.type === "swiperight") {
+
+                    //$("#back1").click();
+                    $.mobile.changePage('#demo-page', { transition: "slide", reverse: "true" });
+                } else if (e.type === "swiped") {
+                    // alert("tap");
+                    //  $("#back1").click();
+                }
             }
-        }
-    });
+        });
    /* window.alert(window.screen.height);
-    var height = window.screen.height/2;
-    var width = window.screen.width;
-    alert(width);
-    $("#img_img").css("height",height+"px");
-    $("#img").css("height",height+"px");
-    $("#img").css("width",width+"px");
-    $("#img_img").css("width",width+"px"); */
+              var height = window.screen.height/2;
+              var width = window.screen.width;
+              alert(width);
+              $("#img_img").css("height",height+"px");
+              $("#img").css("height",height+"px");
+              $("#img").css("width",width+"px");
+              $("#img_img").css("width",width+"px"); */
     </script>
 
-<!-- Styling -->    
-<style>
-    *{  -webkit-user-select:none; /* Prevent copy paste for all elements except text fields */
-    -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* set highlight color for user interaction */
-    -moz-tap-highlight-color:rgba(0, 0, 0, 0); /* set highlight color for user interaction */
-    -ms-touch-action:none;
-    -moz-user-select:-moz-none;
-    margin: 0;
-    padding: 0;
-    }
-    
-    th {text-align: center;}
-    h2 {color: black;text-align: center;}
-    #about {width: 100%; border: 0px solid black;display: none; text-align: center;}
-    #help {width: 100%; border: 0px solid black;display: none; text-align: center;}
-    @media all and (max-width: 960px){
-    
-        .ui-mobile .ui-page {max-height: 100% !important; max-width: 100% !important;}
-        #main ul li>a {}
-    
-    }
-    .ui-table-columntoggle-btn {
-    display: none;
-    }
-    input[type=text] {
-        text-transform: uppercase;
-        border: 0px solid #1d1d1d;
-    }  
-    #main ul > li { padding-top: 3px; padding-bottom: 3px; }
-    
-    .page_header a { color:#2ad !important;}
-    .page_header { position: fixed;}
+    <!-- Styling -->
+    <style>
+        * {
+            -webkit-user-select: none;
+            /* Prevent copy paste for all elements except text fields */
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            /* set highlight color for user interaction */
+            -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+            /* set highlight color for user interaction */
+            -ms-touch-action: none;
+            -moz-user-select: -moz-none;
+            margin: 0;
+            padding: 0;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        h2 {
+            color: black;
+            text-align: center;
+        }
+
+        #about {
+            width: 100%;
+            border: 0px solid black;
+            display: none;
+            text-align: center;
+        }
+
+        #help {
+            width: 100%;
+            border: 0px solid black;
+            display: none;
+            text-align: center;
+        }
+
+        @media all and (max-width: 960px) {
+
+            .ui-mobile .ui-page {
+                max-height: 100% !important;
+                max-width: 100% !important;
+            }
+
+            #main ul li>a {}
+
+        }
+
+        .ui-table-columntoggle-btn {
+            display: none;
+        }
+
+        input[type=text] {
+            text-transform: uppercase;
+            border: 0px solid #1d1d1d;
+        }
+
+        #main ul>li {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+        .page_header a {
+            color: #2ad !important;
+        }
+
+        .page_header {
+            position: fixed;
+        }
     </style>
 </head>
+
 <body>
     <div data-url="demo-page" data-role="page" id="demo-page">
-        
-   <!--       <div data-role="panel" id="left-panel" data-theme="b">
+
+        <!--       <div data-role="panel" id="left-panel" data-theme="b">
         <p>Left reveal panel.</p>
         <a href="#main" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-right">Close</a>
     </div><!-- /panel 
@@ -92,74 +138,97 @@
         <p>Right push panel.</p>
         <a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-right">Close</a>
     </div><!-- /panel -->
-      
-        
-          <div data-role="header" data-theme="b" data-position="fixed" class="page_header" style="display:inline-block ! important;">
-            <h1 style="margin:0 auto; text-align:center;"><a style="padding: 0.7em 0px; text-align:center; margin:0 auto; background-color: inherit; font-size: 1em; border: 0px solid red;" id="cgpa" >CGPA</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style=" padding: 0.7em 0px; text-align:center; margin:0 auto; background-color: inherit; font-size: 1em; border: 0px solid red;" id="cgpa_comment" ></a></h1>
-        <a href="#info" id="info" data-transition="slide" data-icon="info" data-role="button"  data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon ui-btn-right"></a> 
-              
-            
-    </div><!-- /header -->
 
-    <div id="main" data-role="main" class="container" role="main">
-        <form>
-    <ul data-role="listview">
-<li><a href="#one" data-transition="slide">SEMESTER 1 <span style="float:right; position:relative;top:0;" id="gpa_1" ></span></a></li>         
-<li><a href="#two" data-transition="slide">SEMESTER 2 <span style="float:right; position:relative;top:0;" id="gpa_2" ></span></a></li>
-<li><a href="#three" data-transition="slide">SEMESTER 3 <span style="float:right; position:relative;top:0;" id="gpa_3" ></span></a></li>
-<li><a href="#four" data-transition="slide">SEMESTER 4 <span style="float:right; position:relative;top:0;" id="gpa_4" ></span></a></li>
-        <li><a href="#five" data-transition="slide">SEMESTER 5 <span style="float:right; position:relative;top:0;" id="gpa_5" ></span></a></li>
-        <li><a href="#six" data-transition="slide">SEMESTER 6 <span style="float:right; position:relative;top:0;" id="gpa_6" ></span></a></li>
-        <li><a href="#seven" data-transition="slide">SEMESTER 7 <span style="float:right; position:relative;top:0;" id="gpa_7" ></span></a></li>
-        <li><a href="#eight" data-transition="slide">SEMESTER 8 <span style="float:right; position:relative;top:0;" id="gpa_8" ></span></a></li>
-        <li><a href="#nine" data-transition="slide">SEMESTER 9 <span style="float:right; position:relative;top:0;" id="gpa_9" ></span></a></li>
-        <li><a href="#ten" data-transition="slide">SEMESTER 10 <span style="float:right; position:relative;top:0;" id="gpa_10" ></span></a></li>
-        <li><a href="#eleven" data-transition="slide">SEMESTER 11 <span style="float:right; position:relative;top:0;" id="gpa_11" ></span></a></li>
-        <li><a href="#twelve" data-transition="slide">SEMESTER 12 <span style="float:right; position:relative;top:0;" id="gpa_12" ></span></a></li>
-        </ul>
-        </form>
-       </div><!--navbar-->
 
-</div><!-- Main Page -->
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"
+            style="display:inline-block ! important;">
+            <h1 style="margin:0 auto; text-align:center;"><a
+                    style="padding: 0.7em 0px; text-align:center; margin:0 auto; background-color: inherit; font-size: 1em; border: 0px solid red;"
+                    id="cgpa">CGPA</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                    style=" padding: 0.7em 0px; text-align:center; margin:0 auto; background-color: inherit; font-size: 1em; border: 0px solid red;"
+                    id="cgpa_comment"></a></h1>
+            <a href="#info" id="info" data-transition="slide" data-icon="info" data-role="button" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon ui-btn-right"></a>
+
+
+        </div><!-- /header -->
+
+        <div id="main" data-role="main" class="container" role="main">
+            <form>
+                <ul data-role="listview">
+                    <li><a href="#one" data-transition="slide">SEMESTER 1 <span
+                                style="float:right; position:relative;top:0;" id="gpa_1"></span></a></li>
+                    <li><a href="#two" data-transition="slide">SEMESTER 2 <span
+                                style="float:right; position:relative;top:0;" id="gpa_2"></span></a></li>
+                    <li><a href="#three" data-transition="slide">SEMESTER 3 <span
+                                style="float:right; position:relative;top:0;" id="gpa_3"></span></a></li>
+                    <li><a href="#four" data-transition="slide">SEMESTER 4 <span
+                                style="float:right; position:relative;top:0;" id="gpa_4"></span></a></li>
+                    <li><a href="#five" data-transition="slide">SEMESTER 5 <span
+                                style="float:right; position:relative;top:0;" id="gpa_5"></span></a></li>
+                    <li><a href="#six" data-transition="slide">SEMESTER 6 <span
+                                style="float:right; position:relative;top:0;" id="gpa_6"></span></a></li>
+                    <li><a href="#seven" data-transition="slide">SEMESTER 7 <span
+                                style="float:right; position:relative;top:0;" id="gpa_7"></span></a></li>
+                    <li><a href="#eight" data-transition="slide">SEMESTER 8 <span
+                                style="float:right; position:relative;top:0;" id="gpa_8"></span></a></li>
+                    <li><a href="#nine" data-transition="slide">SEMESTER 9 <span
+                                style="float:right; position:relative;top:0;" id="gpa_9"></span></a></li>
+                    <li><a href="#ten" data-transition="slide">SEMESTER 10 <span
+                                style="float:right; position:relative;top:0;" id="gpa_10"></span></a></li>
+                    <li><a href="#eleven" data-transition="slide">SEMESTER 11 <span
+                                style="float:right; position:relative;top:0;" id="gpa_11"></span></a></li>
+                    <li><a href="#twelve" data-transition="slide">SEMESTER 12 <span
+                                style="float:right; position:relative;top:0;" id="gpa_12"></span></a></li>
+                </ul>
+            </form>
+        </div>
+        <!--navbar-->
+
+    </div><!-- Main Page -->
 
     <!-- INFO -->
-    <div data-role="page" data-theme="b" class="container page_header" style="margin:0; padding:0;" id="info"   >
+    <div data-role="page" data-theme="b" class="container page_header" style="margin:0; padding:0;" id="info">
 
         <div>
-             <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <h1> </h1>
-        <a href="#demo-page" id="back_info" data-transition="slide" data-direction="reverse" data-icon="home" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
-    <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open right panel</a> -->
-    </div><!-- /header -->
-            <input type="button" value="ABOUT" id="about_app" data-role="button" data-icon="info" data-theme="b"/>
+            <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
+                <h1> </h1>
+                <a href="#demo-page" id="back_info" data-transition="slide" data-direction="reverse" data-icon="home"
+                    data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                    panel</a>
+                <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open right panel</a> -->
+            </div><!-- /header -->
+            <input type="button" value="ABOUT" id="about_app" data-role="button" data-icon="info" data-theme="b" />
             <div id="about" class="container">
-           <br>
-						<p><i>created by</i></p><br>
-						<h2 style="color:white;">Aguziendu Ugochukwu &copy;</h2>
-<p></p>
-<br><br>
-<p><i>for</i></p>
-<br><br>
-<h3>ALL NATIONS UNIVERSITY COLLEGE</h3>
-<p>www.anuc.edu.gh</p><br><br><br>
+                <br>
+                <p><i>created by</i></p><br>
+                <h2 style="color:white;">Aguziendu Ugochukwu &copy;</h2>
+                <p></p>
+                <br><br>
+                <p><i>for</i></p>
+                <br><br>
+                <h3>ALL NATIONS UNIVERSITY COLLEGE</h3>
+                <p>www.anuc.edu.gh</p><br><br><br>
             </div>
             <button data-theme="b" data-iconshadow="true" id="help_app"> HELP </button>
             <div id="help">
-<br>
+                <br>
                 <p>Swipe >>> to go back from any page.</p>
                 <p>Swipe <<< from HOME to switch to INFO page. </p>
-<br><p class="text1" > You need to input the grade and credit hours and it will automatically calculate the GPA of particular semester and then CGPA</p> <br>
-<p class="text1"> You can calculate CGPA for 12 semesters</p><br><br><br>
+                        <br>
+                        <p class="text1"> You need to input the grade and credit hours and it will automatically
+                            calculate the GPA of particular semester and then CGPA</p> <br>
+                        <p class="text1"> You can calculate CGPA for 12 semesters</p><br><br><br>
 
             </div>
 
+        </div>
     </div>
-</div>
     <!--end INFO -->
-    
-    
+
+
     <!-- ONE -->
-<!-- <div data-role="page" data-theme="a" title="list" class="container" data-transition="flip" id="one" >
+    <!-- <div data-role="page" data-theme="a" title="list" class="container" data-transition="flip" id="one" >
         <div>
              <div data-role="header" data-theme="b">
         <h1> PAGE 1</h1>
@@ -180,1539 +249,1620 @@
             </div>
     </div>
 </div> -->
-          <div data-role="page" data-transition="flip" data-position="fixed" class="container" id="one" >
+    <div data-role="page" data-transition="flip" data-position="fixed" class="container" id="one">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> ONE</h1>
-                                <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;" id="gpa_1_1" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-            <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-                                   <!--  table 1 -->
-     <form oninput="loadall();calc();check();" class = "bs-example bs-example-form"  id="form1" role="form">
-    <div class = "container" >
-    <table data-role="table" data-mode="columntoggle" class = "ui-responsive">
-   <thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th style="display:none;">GRADE &nbsp;&nbsp;&nbsp; VALUE</th>
-</tr>
-</thead>
-<tbody class="tbody">
-<tr>
-<td><input  type="text" id="course1" class = "form-control" /></td>
-<td><input type="text" style="text-transform:uppercase;" id="1" class = "form-control" /></td>
-<td><input type="text" id="points1" class = "form-control" /></td>
-<td><input type="text" id="credit1"  placeholder=" "  class = "form-control" /></td>
-<td><input type="text" id="grade_value1" class = "form-control" /></td>
-</tr>
-<tr>
-<td><input  type="text"  id="course2"/></td>
-<td><input type="text" style="text-transform:uppercase;" id="2" /></td>
-<td><input type="text" style="text-transform:uppercase;" id="points2" /></td>
-<td><input type="text" id="credit2" /></td>
-<td><input type="text" id="grade_value2" /></td>
-</tr>
-<tr>
-<td><input type="text"  id="course3"/></td>
-<td><input type="text" id="3" /></td>
-<td><input type="text" id="points3"/></td>
-<td><input type="text" id="credit3"/></td>
-<td><input type="text" id="grade_value3"/></td>
-</tr>
-<tr>
-<td><input type="text"  id="course4"/></td>
-<td><input type="text" id="4" /></td>
-<td><input type="text" id="points4"/></td>
-<td><input type="text" id="credit4"/></td>
-<td><input type="text" id="grade_value4"/></td>
-</tr>
-<tr>
-<td><input type="text"  id="course5"/></td>
-<td><input type="text" id="5" /></td>
-<td><input type="text" id="points5"/></td>
-<td><input type="text" id="credit5"/></td>
-<td><input type="text" id="grade_value5"/></td>
-</tr>
-<tr>
-<td><input type="text"  id="course6"/></td>
-<td><input type="text" id="6" /></td>
-<td><input type="text" id="points6"/></td>
-<td><input type="text" id="credit6"/></td>
-<td><input type="text" id="grade_value6"/></td>
-</tr>
-<tr>
-<td><input type="text"  id="course6"/></td>
-<td><input type="text" id="7" /></td>
-<td><input type="text" id="points7"/></td>
-<td><input type="text" id="credit7"/></td>
-<td><input type="text" id="grade_value7"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td><input type="text" id="8" /></td>
-<td><input type="text" id="points8"/></td>
-<td><input type="text" id="credit8"/></td>
-<td><input type="text" id="grade_value8"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td><input type="text" id="9" /></td>
-<td><input type="text" id="points9"/></td>
-<td><input type="text" id="credit9"/></td>
-<td><input type="text" id="grade_value9"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td><input type="text" id="10" /></td>
-<td><input type="text" id="points10"/></td>
-<td><input type="text" id="credit10"/></td>
-<td><input type="text" id="grade_value10"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td><input type="text" id="11" /></td>
-<td><input type="text" id="points11"/></td>
-<td><input type="text" id="credit11"/></td>
-<td><input type="text" id="grade_value11"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td><input type="text" id="12" /></td>
-<td><input type="text" id="points12"/></td>
-<td><input type="text" id="credit12"/></td>
-<td><input type="text" id="grade_value12"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="button" id="reset1" data-theme="b" value="RESET"></td>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+                id="gpa_1_1"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-</tr>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <!--  table 1 -->
+            <form oninput="loadall();calc();check();" class="bs-example bs-example-form" id="form1" role="form">
+                <div class="container">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th style="display:none;">GRADE &nbsp;&nbsp;&nbsp; VALUE</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" id="course1" class="form-control" /></td>
+                                <td><input type="text" style="text-transform:uppercase;" id="1" class="form-control" />
+                                </td>
+                                <td><input type="text" id="points1" class="form-control" /></td>
+                                <td><input type="text" id="credit1" placeholder=" " class="form-control" /></td>
+                                <td><input type="text" id="grade_value1" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="course2" /></td>
+                                <td><input type="text" style="text-transform:uppercase;" id="2" /></td>
+                                <td><input type="text" style="text-transform:uppercase;" id="points2" /></td>
+                                <td><input type="text" id="credit2" /></td>
+                                <td><input type="text" id="grade_value2" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="course3" /></td>
+                                <td><input type="text" id="3" /></td>
+                                <td><input type="text" id="points3" /></td>
+                                <td><input type="text" id="credit3" /></td>
+                                <td><input type="text" id="grade_value3" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="course4" /></td>
+                                <td><input type="text" id="4" /></td>
+                                <td><input type="text" id="points4" /></td>
+                                <td><input type="text" id="credit4" /></td>
+                                <td><input type="text" id="grade_value4" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="course5" /></td>
+                                <td><input type="text" id="5" /></td>
+                                <td><input type="text" id="points5" /></td>
+                                <td><input type="text" id="credit5" /></td>
+                                <td><input type="text" id="grade_value5" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="course6" /></td>
+                                <td><input type="text" id="6" /></td>
+                                <td><input type="text" id="points6" /></td>
+                                <td><input type="text" id="credit6" /></td>
+                                <td><input type="text" id="grade_value6" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="course6" /></td>
+                                <td><input type="text" id="7" /></td>
+                                <td><input type="text" id="points7" /></td>
+                                <td><input type="text" id="credit7" /></td>
+                                <td><input type="text" id="grade_value7" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="8" /></td>
+                                <td><input type="text" id="points8" /></td>
+                                <td><input type="text" id="credit8" /></td>
+                                <td><input type="text" id="grade_value8" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="9" /></td>
+                                <td><input type="text" id="points9" /></td>
+                                <td><input type="text" id="credit9" /></td>
+                                <td><input type="text" id="grade_value9" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="10" /></td>
+                                <td><input type="text" id="points10" /></td>
+                                <td><input type="text" id="credit10" /></td>
+                                <td><input type="text" id="grade_value10" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="11" /></td>
+                                <td><input type="text" id="points11" /></td>
+                                <td><input type="text" id="credit11" /></td>
+                                <td><input type="text" id="grade_value11" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="12" /></td>
+                                <td><input type="text" id="points12" /></td>
+                                <td><input type="text" id="credit12" /></td>
+                                <td><input type="text" id="grade_value12" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="button" id="reset1" data-theme="b" value="RESET"></td>
 
-<tr>
- <td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa" readonly /></td>
-</tr>
-</tbody>
-	
-</table>
-<center>
-</center>
-<div id="result" style="">
-<table class="table" style="display:none;">
-<tr>
-<td><input type="text" value="TOTAL" readonly/></td>
-<td></td>
-<td><input type="text"/></td>
-<td><input type="text" id="sum_credit"/></td>
-<td><input type="text" id="sum_grade_value" size="3"/></td>
-</tr>
-</table>
-<table class="table" >
-<tbody>
+                            </tr>
 
-</tbody>
-</table>
-</div>
-</div>
-</form>
-<!-- end table -->
- <br><br><br>
-            
-            </div>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa" readonly /></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <center>
+                    </center>
+                    <div id="result" style="">
+                        <table class="table" style="display:none;">
+                            <tr>
+                                <td><input type="text" value="TOTAL" readonly /></td>
+                                <td></td>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="sum_credit" /></td>
+                                <td><input type="text" id="sum_grade_value" size="3" /></td>
+                            </tr>
+                        </table>
+                        <table class="table">
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <!-- end table -->
+            <br><br><br>
+
+        </div>
     </div>
 
     <!-- TWO -->
-    
-    <div data-role="page" data-theme="a" data-transition="flip" class="container" id="two" >
+
+    <div data-role="page" data-theme="a" data-transition="flip" class="container" id="two">
         <div data-role="header" data-theme="b" class="page_header" data-position="fixed">
-             <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
-        <h1>TWO </h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;" data-theme="" id="gpa_2_2" ></a>
-       
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-            <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form2" oninput="load_2();calc2();check2();" role="form" > 
-<div class="container" id="table2">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td><input type="text"  title="Enter course name here"/></td>
-<td><input type="text" id="13" /></td>
-<td><input type="text" id="points13"/></td>
-<td><input type="text" id="credit13" placeholder=" "  /></td>
-<td><input type="text" id="grade_value13"/></td>
-</tr>
-<tr>
-<td><input  type="text"/></td>
-<td><input type="text" id="14" /></td>
-<td><input type="text" id="points14"/></td>
-<td><input type="text" id="credit14"/></td>
-<td><input type="text" id="grade_value14"/></td>
-</tr>
-<tr>
-<td><input  type="text"/></td>
-<td><input type="text" id="15" /></td>
-<td><input type="text" id="points15"/></td>
-<td><input type="text" id="credit15"/></td>
-<td><input type="text" id="grade_value15"/></td>
-</tr>
-<tr>
-<td><input  type="text"/></td>
-<td><input type="text" id="16" /></td>
-<td><input type="text" id="points16"/></td>
-<td><input type="text" id="credit16"/></td>
-<td><input type="text" id="grade_value16"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="17" /></td>
-<td><input type="text" id="points17"/></td>
-<td><input type="text" id="credit17"/></td>
-<td><input type="text" id="grade_value17"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="18" /></td>
-<td><input type="text" id="points18"/></td>
-<td><input type="text" id="credit18"/></td>
-<td><input type="text" id="grade_value18"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="19" /></td>
-<td><input type="text" id="points19"/></td>
-<td><input type="text" id="credit19"/></td>
-<td><input type="text" id="grade_value19"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="20" /></td>
-<td><input type="text" id="points20"/></td>
-<td><input type="text" id="credit20"/></td>
-<td><input type="text" id="grade_value20"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="21" /></td>
-<td><input type="text" id="points21"/></td>
-<td><input type="text" id="credit21"/></td>
-<td><input type="text" id="grade_value21"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="22" /></td>
-<td><input type="text" id="points22"/></td>
-<td><input type="text" id="credit22"/></td>
-<td><input type="text" id="grade_value22"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset2" value="RESET"/></td>
-<tr>
- <td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment2" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa2" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
+            <h1>TWO </h1>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+                data-theme="" id="gpa_2_2"></a>
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit2"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value2" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-</div>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
+
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form2" oninput="load_2();calc2();check2();" role="form">
+                <div class="container" id="table2">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="13" /></td>
+                                <td><input type="text" id="points13" /></td>
+                                <td><input type="text" id="credit13" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value13" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="14" /></td>
+                                <td><input type="text" id="points14" /></td>
+                                <td><input type="text" id="credit14" /></td>
+                                <td><input type="text" id="grade_value14" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="15" /></td>
+                                <td><input type="text" id="points15" /></td>
+                                <td><input type="text" id="credit15" /></td>
+                                <td><input type="text" id="grade_value15" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="16" /></td>
+                                <td><input type="text" id="points16" /></td>
+                                <td><input type="text" id="credit16" /></td>
+                                <td><input type="text" id="grade_value16" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="17" /></td>
+                                <td><input type="text" id="points17" /></td>
+                                <td><input type="text" id="credit17" /></td>
+                                <td><input type="text" id="grade_value17" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="18" /></td>
+                                <td><input type="text" id="points18" /></td>
+                                <td><input type="text" id="credit18" /></td>
+                                <td><input type="text" id="grade_value18" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="19" /></td>
+                                <td><input type="text" id="points19" /></td>
+                                <td><input type="text" id="credit19" /></td>
+                                <td><input type="text" id="grade_value19" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="20" /></td>
+                                <td><input type="text" id="points20" /></td>
+                                <td><input type="text" id="credit20" /></td>
+                                <td><input type="text" id="grade_value20" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="21" /></td>
+                                <td><input type="text" id="points21" /></td>
+                                <td><input type="text" id="credit21" /></td>
+                                <td><input type="text" id="grade_value21" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="22" /></td>
+                                <td><input type="text" id="points22" /></td>
+                                <td><input type="text" id="credit22" /></td>
+                                <td><input type="text" id="grade_value22" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset2" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment2" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa2" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit2" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value2" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+    </div>
 
 
 
-        <!-- THREE -->
-    
-        <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="three" >
+    <!-- THREE -->
+
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="three">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> THREE</h1>
-                    <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;" data-theme="" id="gpa_3_3" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-          <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form3" oninput="load_3();calc3();check3();" role="form" > 
-<div class="container" id="table2">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td><input type="text"  title="Enter course name here"/></td>
-<td><input type="text" id="23" /></td>
-<td><input type="text" id="points23"/></td>
-<td><input type="text" id="credit23" placeholder=" "  /></td>
-<td><input type="text" id="grade_value23"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td><input type="text" id="24" /></td>
-<td><input type="text" id="points24"/></td>
-<td><input type="text" id="credit24"/></td>
-<td><input type="text" id="grade_value24"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="25" /></td>
-<td><input type="text" id="points25"/></td>
-<td><input type="text" id="credit25"/></td>
-<td><input type="text" id="grade_value25"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="26" /></td>
-<td><input type="text" id="points26"/></td>
-<td><input type="text" id="credit26"/></td>
-<td><input type="text" id="grade_value26"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="27" /></td>
-<td><input type="text" id="points27"/></td>
-<td><input type="text" id="credit27"/></td>
-<td><input type="text" id="grade_value27"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="28" /></td>
-<td><input type="text" id="points28"/></td>
-<td><input type="text" id="credit28"/></td>
-<td><input type="text" id="grade_value28"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="29" /></td>
-<td><input type="text" id="points29"/></td>
-<td><input type="text" id="credit29"/></td>
-<td><input type="text" id="grade_value29"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="30" /></td>
-<td><input type="text" id="points30"/></td>
-<td><input type="text" id="credit30"/></td>
-<td><input type="text" id="grade_value30"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="31" /></td>
-<td><input type="text" id="points31"/></td>
-<td><input type="text" id="credit31"/></td>
-<td><input type="text" id="grade_value31"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="32" /></td>
-<td><input type="text" id="points32"/></td>
-<td><input type="text" id="credit32"/></td>
-<td><input type="text" id="grade_value32"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset3" value="RESET"/></td>
-<tr>
- <td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment3" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa3" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+                data-theme="" id="gpa_3_3"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit3"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value3" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-<!-- end page three  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form3" oninput="load_3();calc3();check3();" role="form">
+                <div class="container" id="table2">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="23" /></td>
+                                <td><input type="text" id="points23" /></td>
+                                <td><input type="text" id="credit23" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value23" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="24" /></td>
+                                <td><input type="text" id="points24" /></td>
+                                <td><input type="text" id="credit24" /></td>
+                                <td><input type="text" id="grade_value24" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="25" /></td>
+                                <td><input type="text" id="points25" /></td>
+                                <td><input type="text" id="credit25" /></td>
+                                <td><input type="text" id="grade_value25" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="26" /></td>
+                                <td><input type="text" id="points26" /></td>
+                                <td><input type="text" id="credit26" /></td>
+                                <td><input type="text" id="grade_value26" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="27" /></td>
+                                <td><input type="text" id="points27" /></td>
+                                <td><input type="text" id="credit27" /></td>
+                                <td><input type="text" id="grade_value27" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="28" /></td>
+                                <td><input type="text" id="points28" /></td>
+                                <td><input type="text" id="credit28" /></td>
+                                <td><input type="text" id="grade_value28" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="29" /></td>
+                                <td><input type="text" id="points29" /></td>
+                                <td><input type="text" id="credit29" /></td>
+                                <td><input type="text" id="grade_value29" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="30" /></td>
+                                <td><input type="text" id="points30" /></td>
+                                <td><input type="text" id="credit30" /></td>
+                                <td><input type="text" id="grade_value30" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="31" /></td>
+                                <td><input type="text" id="points31" /></td>
+                                <td><input type="text" id="credit31" /></td>
+                                <td><input type="text" id="grade_value31" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="32" /></td>
+                                <td><input type="text" id="points32" /></td>
+                                <td><input type="text" id="credit32" /></td>
+                                <td><input type="text" id="grade_value32" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset3" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment3" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa3" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-        <!-- FOUR -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="four" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit3" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value3" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+        <!-- end page three  -->
+    </div>
+
+
+    <!-- FOUR -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="four">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> FOUR</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;" data-theme="" id="gpa_4_4" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form4" oninput="load_4();calc4();check4();" role="form" > 
-<div class="container" id="table2">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="33" /></td>
-<td><input type="text" id="points33"/></td>
-<td><input type="text" id="credit33" placeholder=" "  /></td>
-<td><input type="text" id="grade_value33"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="34" /></td>
-<td><input type="text" id="points34"/></td>
-<td><input type="text" id="credit34"/></td>
-<td><input type="text" id="grade_value34"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="35" /></td>
-<td><input type="text" id="points35"/></td>
-<td><input type="text" id="credit35"/></td>
-<td><input type="text" id="grade_value35"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="36"/></td>
-<td><input type="text" id="points36"/></td>
-<td><input type="text" id="credit36"/></td>
-<td><input type="text" id="grade_value36"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="37" /></td>
-<td><input type="text" id="points37"/></td>
-<td><input type="text" id="credit37"/></td>
-<td><input type="text" id="grade_value37"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="38" /></td>
-<td><input type="text" id="points38"/></td>
-<td><input type="text" id="credit38"/></td>
-<td><input type="text" id="grade_value38"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="39" /></td>
-<td><input type="text" id="points39"/></td>
-<td><input type="text" id="credit39"/></td>
-<td><input type="text" id="grade_value39"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="40" /></td>
-<td><input type="text" id="points40"/></td>
-<td><input type="text" id="credit40"/></td>
-<td><input type="text" id="grade_value40"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="41" /></td>
-<td><input type="text" id="points41"/></td>
-<td><input type="text" id="credit41"/></td>
-<td><input type="text" id="grade_value41"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="42" /></td>
-<td><input type="text" id="points42"/></td>
-<td><input type="text" id="credit42"/></td>
-<td><input type="text" id="grade_value42"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset4" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment4" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa4" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+                data-theme="" id="gpa_4_4"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit4"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value4" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form4" oninput="load_4();calc4();check4();" role="form">
+                <div class="container" id="table2">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="33" /></td>
+                                <td><input type="text" id="points33" /></td>
+                                <td><input type="text" id="credit33" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value33" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="34" /></td>
+                                <td><input type="text" id="points34" /></td>
+                                <td><input type="text" id="credit34" /></td>
+                                <td><input type="text" id="grade_value34" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="35" /></td>
+                                <td><input type="text" id="points35" /></td>
+                                <td><input type="text" id="credit35" /></td>
+                                <td><input type="text" id="grade_value35" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="36" /></td>
+                                <td><input type="text" id="points36" /></td>
+                                <td><input type="text" id="credit36" /></td>
+                                <td><input type="text" id="grade_value36" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="37" /></td>
+                                <td><input type="text" id="points37" /></td>
+                                <td><input type="text" id="credit37" /></td>
+                                <td><input type="text" id="grade_value37" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="38" /></td>
+                                <td><input type="text" id="points38" /></td>
+                                <td><input type="text" id="credit38" /></td>
+                                <td><input type="text" id="grade_value38" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="39" /></td>
+                                <td><input type="text" id="points39" /></td>
+                                <td><input type="text" id="credit39" /></td>
+                                <td><input type="text" id="grade_value39" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="40" /></td>
+                                <td><input type="text" id="points40" /></td>
+                                <td><input type="text" id="credit40" /></td>
+                                <td><input type="text" id="grade_value40" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="41" /></td>
+                                <td><input type="text" id="points41" /></td>
+                                <td><input type="text" id="credit41" /></td>
+                                <td><input type="text" id="grade_value41" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="42" /></td>
+                                <td><input type="text" id="points42" /></td>
+                                <td><input type="text" id="credit42" /></td>
+                                <td><input type="text" id="grade_value42" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset4" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment4" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa4" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-    
-        <!-- FIVE -->
-         <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="five" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit4" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value4" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page -->
+    </div>
+
+
+
+    <!-- FIVE -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="five">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-                <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> FIVE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;" data-theme="" id="gpa_5_5" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form5" oninput="load_5();calc5();check5();" role="form" > 
-<div class="container" id="table2">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="43" /></td>
-<td><input type="text" id="points43"/></td>
-<td><input type="text" id="credit43"/></td>
-<td><input type="text" id="grade_value43"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="44" /></td>
-<td><input type="text" id="points44"/></td>
-<td><input type="text" id="credit44"/></td>
-<td><input type="text" id="grade_value44"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="45" /></td>
-<td><input type="text" id="points45"/></td>
-<td><input type="text" id="credit45"/></td>
-<td><input type="text" id="grade_value45"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="46" /></td>
-<td><input type="text" id="points46"/></td>
-<td><input type="text" id="credit46"/></td>
-<td><input type="text" id="grade_value46"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="47" /></td>
-<td><input type="text" id="points47"/></td>
-<td><input type="text" id="credit47"/></td>
-<td><input type="text" id="grade_value47"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="48" /></td>
-<td><input type="text" id="points48"/></td>
-<td><input type="text" id="credit48"/></td>
-<td><input type="text" id="grade_value48"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="49" /></td>
-<td><input type="text" id="points49"/></td>
-<td><input type="text" id="credit49"/></td>
-<td><input type="text" id="grade_value49"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="50" /></td>
-<td><input type="text" id="points50"/></td>
-<td><input type="text" id="credit50"/></td>
-<td><input type="text" id="grade_value50"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="51" /></td>
-<td><input type="text" id="points51"/></td>
-<td><input type="text" id="credit51"/></td>
-<td><input type="text" id="grade_value51"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="52" /></td>
-<td><input type="text" id="points52"/></td>
-<td><input type="text" id="credit52"/></td>
-<td><input type="text" id="grade_value52"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset5" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment5" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa5" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+                data-theme="" id="gpa_5_5"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit5"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value5" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form5" oninput="load_5();calc5();check5();" role="form">
+                <div class="container" id="table2">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="43" /></td>
+                                <td><input type="text" id="points43" /></td>
+                                <td><input type="text" id="credit43" /></td>
+                                <td><input type="text" id="grade_value43" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="44" /></td>
+                                <td><input type="text" id="points44" /></td>
+                                <td><input type="text" id="credit44" /></td>
+                                <td><input type="text" id="grade_value44" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="45" /></td>
+                                <td><input type="text" id="points45" /></td>
+                                <td><input type="text" id="credit45" /></td>
+                                <td><input type="text" id="grade_value45" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="46" /></td>
+                                <td><input type="text" id="points46" /></td>
+                                <td><input type="text" id="credit46" /></td>
+                                <td><input type="text" id="grade_value46" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="47" /></td>
+                                <td><input type="text" id="points47" /></td>
+                                <td><input type="text" id="credit47" /></td>
+                                <td><input type="text" id="grade_value47" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="48" /></td>
+                                <td><input type="text" id="points48" /></td>
+                                <td><input type="text" id="credit48" /></td>
+                                <td><input type="text" id="grade_value48" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="49" /></td>
+                                <td><input type="text" id="points49" /></td>
+                                <td><input type="text" id="credit49" /></td>
+                                <td><input type="text" id="grade_value49" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="50" /></td>
+                                <td><input type="text" id="points50" /></td>
+                                <td><input type="text" id="credit50" /></td>
+                                <td><input type="text" id="grade_value50" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="51" /></td>
+                                <td><input type="text" id="points51" /></td>
+                                <td><input type="text" id="credit51" /></td>
+                                <td><input type="text" id="grade_value51" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="52" /></td>
+                                <td><input type="text" id="points52" /></td>
+                                <td><input type="text" id="credit52" /></td>
+                                <td><input type="text" id="grade_value52" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset5" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment5" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa5" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    <!--end page --></div>
-    
-        <!-- SIX -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="six" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit5" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value5" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!--end page -->
+    </div>
+
+    <!-- SIX -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="six">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> SIX</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;" id="gpa_6_6" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form6" oninput="load_6();calc6();check6();" role="form" > 
-<div class="container" id="table2">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td ><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="53" /></td>
-<td><input type="text" id="points53"/></td>
-<td><input type="text" id="credit53" placeholder=" "  /></td>
-<td><input type="text" id="grade_value53"/></td>
-</tr>
-<tr>
-<td ><input type="text"/></td>
-<td><input type="text" id="54" /></td>
-<td><input type="text" id="points54"/></td>
-<td><input type="text" id="credit54"/></td>
-<td><input type="text" id="grade_value54"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="55" /></td>
-<td><input type="text" id="points55"/></td>
-<td><input type="text" id="credit55"/></td>
-<td><input type="text" id="grade_value55"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="56" /></td>
-<td><input type="text" id="points56"/></td>
-<td><input type="text" id="credit56"/></td>
-<td><input type="text" id="grade_value56"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="57" /></td>
-<td><input type="text" id="points57"/></td>
-<td><input type="text" id="credit57"/></td>
-<td><input type="text" id="grade_value57"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="58"/></td>
-<td><input type="text" id="points58"/></td>
-<td><input type="text" id="credit58"/></td>
-<td><input type="text" id="grade_value58"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="59"/></td>
-<td><input type="text" id="points59"/></td>
-<td><input type="text" id="credit59"/></td>
-<td><input type="text" id="grade_value59"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="60"/></td>
-<td><input type="text" id="points60"/></td>
-<td><input type="text" id="credit60"/></td>
-<td><input type="text" id="grade_value60"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="61"/></td>
-<td><input type="text" id="points61"/></td>
-<td><input type="text" id="credit61"/></td>
-<td><input type="text" id="grade_value61"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="62"/></td>
-<td><input type="text" id="points62"/></td>
-<td><input type="text" id="credit62"/></td>
-<td><input type="text" id="grade_value62"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset6" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment6" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa6" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+                id="gpa_6_6"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit6"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value6" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form6" oninput="load_6();calc6();check6();" role="form">
+                <div class="container" id="table2">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="53" /></td>
+                                <td><input type="text" id="points53" /></td>
+                                <td><input type="text" id="credit53" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value53" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="54" /></td>
+                                <td><input type="text" id="points54" /></td>
+                                <td><input type="text" id="credit54" /></td>
+                                <td><input type="text" id="grade_value54" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="55" /></td>
+                                <td><input type="text" id="points55" /></td>
+                                <td><input type="text" id="credit55" /></td>
+                                <td><input type="text" id="grade_value55" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="56" /></td>
+                                <td><input type="text" id="points56" /></td>
+                                <td><input type="text" id="credit56" /></td>
+                                <td><input type="text" id="grade_value56" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="57" /></td>
+                                <td><input type="text" id="points57" /></td>
+                                <td><input type="text" id="credit57" /></td>
+                                <td><input type="text" id="grade_value57" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="58" /></td>
+                                <td><input type="text" id="points58" /></td>
+                                <td><input type="text" id="credit58" /></td>
+                                <td><input type="text" id="grade_value58" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="59" /></td>
+                                <td><input type="text" id="points59" /></td>
+                                <td><input type="text" id="credit59" /></td>
+                                <td><input type="text" id="grade_value59" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="60" /></td>
+                                <td><input type="text" id="points60" /></td>
+                                <td><input type="text" id="credit60" /></td>
+                                <td><input type="text" id="grade_value60" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="61" /></td>
+                                <td><input type="text" id="points61" /></td>
+                                <td><input type="text" id="credit61" /></td>
+                                <td><input type="text" id="grade_value61" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="62" /></td>
+                                <td><input type="text" id="points62" /></td>
+                                <td><input type="text" id="credit62" /></td>
+                                <td><input type="text" id="grade_value62" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset6" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment6" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa6" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-        <!-- SEVEN -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="seven" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit6" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value6" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page  -->
+    </div>
+
+
+    <!-- SEVEN -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="seven">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> SEVEN</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;" id="gpa_7_7" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form7" oninput="load_7();calc7();check7();" role="form" > 
-<div class="container" id="table7">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td ><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="63"/></td>
-<td><input type="text" id="points63"/></td>
-<td><input type="text" id="credit63" placeholder=" "  /></td>
-<td><input type="text" id="grade_value63"/></td>
-</tr>
-<tr>
-<td ><input type="text"/></td>
-<td><input type="text" id="64"/></td>
-<td><input type="text" id="points64"/></td>
-<td><input type="text" id="credit64"/></td>
-<td><input type="text" id="grade_value64"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="65"/></td>
-<td><input type="text" id="points65"/></td>
-<td><input type="text" id="credit65"/></td>
-<td><input type="text" id="grade_value65"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="66"/></td>
-<td><input type="text" id="points66"/></td>
-<td><input type="text" id="credit66"/></td>
-<td><input type="text" id="grade_value66"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="67"/></td>
-<td><input type="text" id="points67"/></td>
-<td><input type="text" id="credit67"/></td>
-<td><input type="text" id="grade_value67"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="68"/></td>
-<td><input type="text" id="points68"/></td>
-<td><input type="text" id="credit68"/></td>
-<td><input type="text" id="grade_value68"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="69"/></td>
-<td><input type="text" id="points69"/></td>
-<td><input type="text" id="credit69"/></td>
-<td><input type="text" id="grade_value69"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="70"/></td>
-<td><input type="text" id="points70"/></td>
-<td><input type="text" id="credit70"/></td>
-<td><input type="text" id="grade_value70"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="71"/></td>
-<td><input type="text" id="points71"/></td>
-<td><input type="text" id="credit71"/></td>
-<td><input type="text" id="grade_value71"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="72"/></td>
-<td><input type="text" id="points72"/></td>
-<td><input type="text" id="credit72"/></td>
-<td><input type="text" id="grade_value72"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset7" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment7" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa7" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+                id="gpa_7_7"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit7"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value7" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form7" oninput="load_7();calc7();check7();" role="form">
+                <div class="container" id="table7">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="63" /></td>
+                                <td><input type="text" id="points63" /></td>
+                                <td><input type="text" id="credit63" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value63" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="64" /></td>
+                                <td><input type="text" id="points64" /></td>
+                                <td><input type="text" id="credit64" /></td>
+                                <td><input type="text" id="grade_value64" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="65" /></td>
+                                <td><input type="text" id="points65" /></td>
+                                <td><input type="text" id="credit65" /></td>
+                                <td><input type="text" id="grade_value65" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="66" /></td>
+                                <td><input type="text" id="points66" /></td>
+                                <td><input type="text" id="credit66" /></td>
+                                <td><input type="text" id="grade_value66" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="67" /></td>
+                                <td><input type="text" id="points67" /></td>
+                                <td><input type="text" id="credit67" /></td>
+                                <td><input type="text" id="grade_value67" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="68" /></td>
+                                <td><input type="text" id="points68" /></td>
+                                <td><input type="text" id="credit68" /></td>
+                                <td><input type="text" id="grade_value68" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="69" /></td>
+                                <td><input type="text" id="points69" /></td>
+                                <td><input type="text" id="credit69" /></td>
+                                <td><input type="text" id="grade_value69" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="70" /></td>
+                                <td><input type="text" id="points70" /></td>
+                                <td><input type="text" id="credit70" /></td>
+                                <td><input type="text" id="grade_value70" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="71" /></td>
+                                <td><input type="text" id="points71" /></td>
+                                <td><input type="text" id="credit71" /></td>
+                                <td><input type="text" id="grade_value71" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="72" /></td>
+                                <td><input type="text" id="points72" /></td>
+                                <td><input type="text" id="credit72" /></td>
+                                <td><input type="text" id="grade_value72" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset7" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment7" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa7" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-        <!-- EIGHT -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="eight" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit7" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value7" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page  -->
+    </div>
+
+
+    <!-- EIGHT -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="eight">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> EIGHT</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;" id="gpa_8_8" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form8" oninput="load_8();calc8();check8();" role="form" > 
-<div class="container" id="table8">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td ><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="73"/></td>
-<td><input type="text" id="points73"/></td>
-<td><input type="text" id="credit73" placeholder=" "  /></td>
-<td><input type="text" id="grade_value73"/></td>
-</tr>
-<tr>
-<td ><input type="text"/></td>
-<td><input type="text" id="74"/></td>
-<td><input type="text" id="points74"/></td>
-<td><input type="text" id="credit74"/></td>
-<td><input type="text" id="grade_value74"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="75"/></td>
-<td><input type="text" id="points75"/></td>
-<td><input type="text" id="credit75"/></td>
-<td><input type="text" id="grade_value75"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="76"/></td>
-<td><input type="text" id="points76"/></td>
-<td><input type="text" id="credit76"/></td>
-<td><input type="text" id="grade_value76"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="77"/></td>
-<td><input type="text" id="points77"/></td>
-<td><input type="text" id="credit77"/></td>
-<td><input type="text" id="grade_value77"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="78"/></td>
-<td><input type="text" id="points78"/></td>
-<td><input type="text" id="credit78"/></td>
-<td><input type="text" id="grade_value78"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="79"/></td>
-<td><input type="text" id="points79"/></td>
-<td><input type="text" id="credit79"/></td>
-<td><input type="text" id="grade_value79"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="80"/></td>
-<td><input type="text" id="points80"/></td>
-<td><input type="text" id="credit80"/></td>
-<td><input type="text" id="grade_value80"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="81"/></td>
-<td><input type="text" id="points81"/></td>
-<td><input type="text" id="credit81"/></td>
-<td><input type="text" id="grade_value81"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="82"/></td>
-<td><input type="text" id="points82"/></td>
-<td><input type="text" id="credit82"/></td>
-<td><input type="text" id="grade_value82"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset8" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment8" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa8" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+                id="gpa_8_8"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit8"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value8" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form8" oninput="load_8();calc8();check8();" role="form">
+                <div class="container" id="table8">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="73" /></td>
+                                <td><input type="text" id="points73" /></td>
+                                <td><input type="text" id="credit73" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value73" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="74" /></td>
+                                <td><input type="text" id="points74" /></td>
+                                <td><input type="text" id="credit74" /></td>
+                                <td><input type="text" id="grade_value74" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="75" /></td>
+                                <td><input type="text" id="points75" /></td>
+                                <td><input type="text" id="credit75" /></td>
+                                <td><input type="text" id="grade_value75" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="76" /></td>
+                                <td><input type="text" id="points76" /></td>
+                                <td><input type="text" id="credit76" /></td>
+                                <td><input type="text" id="grade_value76" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="77" /></td>
+                                <td><input type="text" id="points77" /></td>
+                                <td><input type="text" id="credit77" /></td>
+                                <td><input type="text" id="grade_value77" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="78" /></td>
+                                <td><input type="text" id="points78" /></td>
+                                <td><input type="text" id="credit78" /></td>
+                                <td><input type="text" id="grade_value78" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="79" /></td>
+                                <td><input type="text" id="points79" /></td>
+                                <td><input type="text" id="credit79" /></td>
+                                <td><input type="text" id="grade_value79" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="80" /></td>
+                                <td><input type="text" id="points80" /></td>
+                                <td><input type="text" id="credit80" /></td>
+                                <td><input type="text" id="grade_value80" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="81" /></td>
+                                <td><input type="text" id="points81" /></td>
+                                <td><input type="text" id="credit81" /></td>
+                                <td><input type="text" id="grade_value81" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="82" /></td>
+                                <td><input type="text" id="points82" /></td>
+                                <td><input type="text" id="credit82" /></td>
+                                <td><input type="text" id="grade_value82" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset8" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment8" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa8" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-        <!-- NINE -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="nine" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit8" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value8" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page  -->
+    </div>
+
+
+    <!-- NINE -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="nine">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> NINE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;" id="gpa_9_9" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form9" oninput="load_9();calc9();check9();" role="form" > 
-<div class="container" id="table9">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;"><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td ><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="83"/></td>
-<td><input type="text" id="points83"/></td>
-<td><input type="text" id="credit83" placeholder=" "  /></td>
-<td><input type="text" id="grade_value83"/></td>
-</tr>
-<tr>
-<td ><input type="text"/></td>
-<td><input type="text" id="84"/></td>
-<td><input type="text" id="points84"/></td>
-<td><input type="text" id="credit84"/></td>
-<td><input type="text" id="grade_value84"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="85"/></td>
-<td><input type="text" id="points85"/></td>
-<td><input type="text" id="credit85"/></td>
-<td><input type="text" id="grade_value85"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="86"/></td>
-<td><input type="text" id="points86"/></td>
-<td><input type="text" id="credit86"/></td>
-<td><input type="text" id="grade_value86"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="87"/></td>
-<td><input type="text" id="points87"/></td>
-<td><input type="text" id="credit87"/></td>
-<td><input type="text" id="grade_value87"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="88"/></td>
-<td><input type="text" id="points88"/></td>
-<td><input type="text" id="credit88"/></td>
-<td><input type="text" id="grade_value88"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="89"/></td>
-<td><input type="text" id="points89"/></td>
-<td><input type="text" id="credit89"/></td>
-<td><input type="text" id="grade_value89"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="90"/></td>
-<td><input type="text" id="points90"/></td>
-<td><input type="text" id="credit90"/></td>
-<td><input type="text" id="grade_value90"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="91"/></td>
-<td><input type="text" id="points91"/></td>
-<td><input type="text" id="credit91"/></td>
-<td><input type="text" id="grade_value91"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="92"/></td>
-<td><input type="text" id="points92"/></td>
-<td><input type="text" id="credit92"/></td>
-<td><input type="text" id="grade_value92"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset9" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment9" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa9" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+                id="gpa_9_9"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit9"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value9" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form9" oninput="load_9();calc9();check9();" role="form">
+                <div class="container" id="table9">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="83" /></td>
+                                <td><input type="text" id="points83" /></td>
+                                <td><input type="text" id="credit83" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value83" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="84" /></td>
+                                <td><input type="text" id="points84" /></td>
+                                <td><input type="text" id="credit84" /></td>
+                                <td><input type="text" id="grade_value84" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="85" /></td>
+                                <td><input type="text" id="points85" /></td>
+                                <td><input type="text" id="credit85" /></td>
+                                <td><input type="text" id="grade_value85" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="86" /></td>
+                                <td><input type="text" id="points86" /></td>
+                                <td><input type="text" id="credit86" /></td>
+                                <td><input type="text" id="grade_value86" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="87" /></td>
+                                <td><input type="text" id="points87" /></td>
+                                <td><input type="text" id="credit87" /></td>
+                                <td><input type="text" id="grade_value87" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="88" /></td>
+                                <td><input type="text" id="points88" /></td>
+                                <td><input type="text" id="credit88" /></td>
+                                <td><input type="text" id="grade_value88" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="89" /></td>
+                                <td><input type="text" id="points89" /></td>
+                                <td><input type="text" id="credit89" /></td>
+                                <td><input type="text" id="grade_value89" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="90" /></td>
+                                <td><input type="text" id="points90" /></td>
+                                <td><input type="text" id="credit90" /></td>
+                                <td><input type="text" id="grade_value90" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="91" /></td>
+                                <td><input type="text" id="points91" /></td>
+                                <td><input type="text" id="credit91" /></td>
+                                <td><input type="text" id="grade_value91" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="92" /></td>
+                                <td><input type="text" id="points92" /></td>
+                                <td><input type="text" id="credit92" /></td>
+                                <td><input type="text" id="grade_value92" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset9" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment9" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa9" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-        <!-- TEN -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="ten" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit9" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value9" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page  -->
+    </div>
+
+
+    <!-- TEN -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="ten">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> TEN</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;" id="gpa_10_10" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form10" oninput="load_10();calc10();check10();" role="form" > 
-<div class="container" id="table10">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td ><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="93"/></td>
-<td><input type="text" id="points93"/></td>
-<td><input type="text" id="credit93" placeholder=" "  /></td>
-<td><input type="text" id="grade_value93"/></td>
-</tr>
-<tr>
-<td ><input type="text"/></td>
-<td><input type="text" id="94"/></td>
-<td><input type="text" id="points94"/></td>
-<td><input type="text" id="credit94"/></td>
-<td><input type="text" id="grade_value94"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="95"/></td>
-<td><input type="text" id="points95"/></td>
-<td><input type="text" id="credit95"/></td>
-<td><input type="text" id="grade_value95"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="96"/></td>
-<td><input type="text" id="points96"/></td>
-<td><input type="text" id="credit96"/></td>
-<td><input type="text" id="grade_value96"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="97"/></td>
-<td><input type="text" id="points97"/></td>
-<td><input type="text" id="credit97"/></td>
-<td><input type="text" id="grade_value97"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="98"/></td>
-<td><input type="text" id="points98"/></td>
-<td><input type="text" id="credit98"/></td>
-<td><input type="text" id="grade_value98"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="99"/></td>
-<td><input type="text" id="points99"/></td>
-<td><input type="text" id="credit99"/></td>
-<td><input type="text" id="grade_value99"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="100"/></td>
-<td><input type="text" id="points100"/></td>
-<td><input type="text" id="credit100"/></td>
-<td><input type="text" id="grade_value100"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="101"/></td>
-<td><input type="text" id="points101"/></td>
-<td><input type="text" id="credit101"/></td>
-<td><input type="text" id="grade_value101"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="102"/></td>
-<td><input type="text" id="points102"/></td>
-<td><input type="text" id="credit102"/></td>
-<td><input type="text" id="grade_value102"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset10" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment10" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa10" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+                id="gpa_10_10"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit10"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value10" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form10" oninput="load_10();calc10();check10();" role="form">
+                <div class="container" id="table10">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="93" /></td>
+                                <td><input type="text" id="points93" /></td>
+                                <td><input type="text" id="credit93" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value93" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="94" /></td>
+                                <td><input type="text" id="points94" /></td>
+                                <td><input type="text" id="credit94" /></td>
+                                <td><input type="text" id="grade_value94" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="95" /></td>
+                                <td><input type="text" id="points95" /></td>
+                                <td><input type="text" id="credit95" /></td>
+                                <td><input type="text" id="grade_value95" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="96" /></td>
+                                <td><input type="text" id="points96" /></td>
+                                <td><input type="text" id="credit96" /></td>
+                                <td><input type="text" id="grade_value96" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="97" /></td>
+                                <td><input type="text" id="points97" /></td>
+                                <td><input type="text" id="credit97" /></td>
+                                <td><input type="text" id="grade_value97" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="98" /></td>
+                                <td><input type="text" id="points98" /></td>
+                                <td><input type="text" id="credit98" /></td>
+                                <td><input type="text" id="grade_value98" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="99" /></td>
+                                <td><input type="text" id="points99" /></td>
+                                <td><input type="text" id="credit99" /></td>
+                                <td><input type="text" id="grade_value99" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="100" /></td>
+                                <td><input type="text" id="points100" /></td>
+                                <td><input type="text" id="credit100" /></td>
+                                <td><input type="text" id="grade_value100" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="101" /></td>
+                                <td><input type="text" id="points101" /></td>
+                                <td><input type="text" id="credit101" /></td>
+                                <td><input type="text" id="grade_value101" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="102" /></td>
+                                <td><input type="text" id="points102" /></td>
+                                <td><input type="text" id="credit102" /></td>
+                                <td><input type="text" id="grade_value102" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset10" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment10" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa10" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-        <!-- ELEVEN -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="eleven" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit10" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value10" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page  -->
+    </div>
+
+
+    <!-- ELEVEN -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="eleven">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1> ELEVEN</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;" id="gpa_11_11" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form11" oninput="load_11();calc11();check11();" role="form" > 
-<div class="container" id="table11">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td ><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="103"/></td>
-<td><input type="text" id="points103"/></td>
-<td><input type="text" id="credit103" placeholder=" "  /></td>
-<td><input type="text" id="grade_value103"/></td>
-</tr>
-<tr>
-<td ><input type="text"/></td>
-<td><input type="text" id="104"/></td>
-<td><input type="text" id="points104"/></td>
-<td><input type="text" id="credit104"/></td>
-<td><input type="text" id="grade_value104"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="105"/></td>
-<td><input type="text" id="points105"/></td>
-<td><input type="text" id="credit105"/></td>
-<td><input type="text" id="grade_value105"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="106"/></td>
-<td><input type="text" id="points106"/></td>
-<td><input type="text" id="credit106"/></td>
-<td><input type="text" id="grade_value106"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="107"/></td>
-<td><input type="text" id="points107"/></td>
-<td><input type="text" id="credit107"/></td>
-<td><input type="text" id="grade_value107"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="108"/></td>
-<td><input type="text" id="points108"/></td>
-<td><input type="text" id="credit108"/></td>
-<td><input type="text" id="grade_value108"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="109"/></td>
-<td><input type="text" id="points109"/></td>
-<td><input type="text" id="credit109"/></td>
-<td><input type="text" id="grade_value109"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="110"/></td>
-<td><input type="text" id="points110"/></td>
-<td><input type="text" id="credit110"/></td>
-<td><input type="text" id="grade_value110"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="111"/></td>
-<td><input type="text" id="points111"/></td>
-<td><input type="text" id="credit111"/></td>
-<td><input type="text" id="grade_value111"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="112"/></td>
-<td><input type="text" id="points112"/></td>
-<td><input type="text" id="credit112"/></td>
-<td><input type="text" id="grade_value112"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset11" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment11" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa11" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+                id="gpa_11_11"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit11"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value11" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form11" oninput="load_11();calc11();check11();" role="form">
+                <div class="container" id="table11">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="103" /></td>
+                                <td><input type="text" id="points103" /></td>
+                                <td><input type="text" id="credit103" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value103" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="104" /></td>
+                                <td><input type="text" id="points104" /></td>
+                                <td><input type="text" id="credit104" /></td>
+                                <td><input type="text" id="grade_value104" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="105" /></td>
+                                <td><input type="text" id="points105" /></td>
+                                <td><input type="text" id="credit105" /></td>
+                                <td><input type="text" id="grade_value105" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="106" /></td>
+                                <td><input type="text" id="points106" /></td>
+                                <td><input type="text" id="credit106" /></td>
+                                <td><input type="text" id="grade_value106" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="107" /></td>
+                                <td><input type="text" id="points107" /></td>
+                                <td><input type="text" id="credit107" /></td>
+                                <td><input type="text" id="grade_value107" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="108" /></td>
+                                <td><input type="text" id="points108" /></td>
+                                <td><input type="text" id="credit108" /></td>
+                                <td><input type="text" id="grade_value108" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="109" /></td>
+                                <td><input type="text" id="points109" /></td>
+                                <td><input type="text" id="credit109" /></td>
+                                <td><input type="text" id="grade_value109" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="110" /></td>
+                                <td><input type="text" id="points110" /></td>
+                                <td><input type="text" id="credit110" /></td>
+                                <td><input type="text" id="grade_value110" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="111" /></td>
+                                <td><input type="text" id="points111" /></td>
+                                <td><input type="text" id="credit111" /></td>
+                                <td><input type="text" id="grade_value111" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="112" /></td>
+                                <td><input type="text" id="points112" /></td>
+                                <td><input type="text" id="credit112" /></td>
+                                <td><input type="text" id="grade_value112" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset11" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment11" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa11" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    
-        <!-- TWELVE -->
-     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="twelve" >
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit11" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value11" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page  -->
+    </div>
+
+
+    <!-- TWELVE -->
+    <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="twelve">
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse"  data-icon="carat-l" data-iconpos="notext" data-shadow="false"           data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
+                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
+                panel</a>
             <h1>TWELVE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;" id="gpa_12_12" ></a>
-        <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-    </div><!-- /header -->
-        
-     <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-           <form id="form12" oninput="load_12();calc12();check12();" role="form" > 
-<div class="container" id="table12">   
-<table data-role="table" data-mode="columntoggle" class="ui-responsive" >
-<thead class="table_head">
-<tr>
-<th>COURSE</th>
-<th>GRADE</th>
-<th>POINT</th>
-<th>CREDIT HOURS</th>
-<th class="grade_value" style="display:none;" ><font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font></th>
-</tr></thead>
-<tbody class="tbody">
-<tr>
-<td ><input type="text" title="Enter course name here"/></td>
-<td><input type="text" id="113"/></td>
-<td><input type="text" id="points113"/></td>
-<td><input type="text" id="credit113" placeholder=" "  /></td>
-<td><input type="text" id="grade_value113"/></td>
-</tr>
-<tr>
-<td ><input type="text"/></td>
-<td><input type="text" id="114"/></td>
-<td><input type="text" id="points114"/></td>
-<td><input type="text" id="credit114"/></td>
-<td><input type="text" id="grade_value114"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="115"/></td>
-<td><input type="text" id="points115"/></td>
-<td><input type="text" id="credit115"/></td>
-<td><input type="text" id="grade_value115"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="116"/></td>
-<td><input type="text" id="points116"/></td>
-<td><input type="text" id="credit116"/></td>
-<td><input type="text" id="grade_value116"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="117"/></td>
-<td><input type="text" id="points117"/></td>
-<td><input type="text" id="credit117"/></td>
-<td><input type="text" id="grade_value117"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="118"/></td>
-<td><input type="text" id="points118"/></td>
-<td><input type="text" id="credit118"/></td>
-<td><input type="text" id="grade_value118"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="119"/></td>
-<td><input type="text" id="points119"/></td>
-<td><input type="text" id="credit119"/></td>
-<td><input type="text" id="grade_value119"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="120"/></td>
-<td><input type="text" id="points120"/></td>
-<td><input type="text" id="credit120"/></td>
-<td><input type="text" id="grade_value120"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="121"/></td>
-<td><input type="text" id="points121"/></td>
-<td><input type="text" id="credit121"/></td>
-<td><input type="text" id="grade_value121"/></td>
-</tr>
-<tr>
-<td><input type="text"/></td>
-<td><input type="text" id="122"/></td>
-<td><input type="text" id="points122"/></td>
-<td><input type="text" id="credit122"/></td>
-<td><input type="text" id="grade_value122"/></td>
-</tr>
-<tr>
-<td><input type="text" /></td>
-<td colspan="3"><input type="reset" data-theme="b" id="reset12" value="RESET"/></td>
-<tr>
-<td><input type="text" /></td>
-<td colspan="2"><textarea type="text" id="gpa_comment12" readonly></textarea></td>
-<td><input class="gpa" type="text" id="gpa12" readonly /></td>
-</tr>
-</tr>
-</tbody>
-</table>
+            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+                id="gpa_12_12"></a>
+            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
+        </div><!-- /header -->
 
-<div id="result" style="">
-<table style="display:none;">
-<tr>
-<td><input type="text" size="6" value="TOTAL" readonly/></td>
-<td><input style="" type="text" /></td>
-<td><input style="" type="text"  size="3"/></td>
-<td><input style="margin-left:8px;" type="text" id="sum_credit12"/></td>
-<td><input style="margin-left:17px;" type="text" id="sum_grade_value12" size="3"/></td>
-</tr>
-</table>  
-</div>
-</div>
-</form>
-    <br><br>
-</div> 
-         
-    <!-- end page  --></div>
+        <div style="width:100%; padding:0; margin:0; border:0px solid black;">
+            <form id="form12" oninput="load_12();calc12();check12();" role="form">
+                <div class="container" id="table12">
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <thead class="table_head">
+                            <tr>
+                                <th>COURSE</th>
+                                <th>GRADE</th>
+                                <th>POINT</th>
+                                <th>CREDIT HOURS</th>
+                                <th class="grade_value" style="display:none;">
+                                    <font size="2">GRADE &nbsp;&nbsp;&nbsp; VALUE</font>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr>
+                                <td><input type="text" title="Enter course name here" /></td>
+                                <td><input type="text" id="113" /></td>
+                                <td><input type="text" id="points113" /></td>
+                                <td><input type="text" id="credit113" placeholder=" " /></td>
+                                <td><input type="text" id="grade_value113" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="114" /></td>
+                                <td><input type="text" id="points114" /></td>
+                                <td><input type="text" id="credit114" /></td>
+                                <td><input type="text" id="grade_value114" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="115" /></td>
+                                <td><input type="text" id="points115" /></td>
+                                <td><input type="text" id="credit115" /></td>
+                                <td><input type="text" id="grade_value115" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="116" /></td>
+                                <td><input type="text" id="points116" /></td>
+                                <td><input type="text" id="credit116" /></td>
+                                <td><input type="text" id="grade_value116" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="117" /></td>
+                                <td><input type="text" id="points117" /></td>
+                                <td><input type="text" id="credit117" /></td>
+                                <td><input type="text" id="grade_value117" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="118" /></td>
+                                <td><input type="text" id="points118" /></td>
+                                <td><input type="text" id="credit118" /></td>
+                                <td><input type="text" id="grade_value118" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="119" /></td>
+                                <td><input type="text" id="points119" /></td>
+                                <td><input type="text" id="credit119" /></td>
+                                <td><input type="text" id="grade_value119" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="120" /></td>
+                                <td><input type="text" id="points120" /></td>
+                                <td><input type="text" id="credit120" /></td>
+                                <td><input type="text" id="grade_value120" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="121" /></td>
+                                <td><input type="text" id="points121" /></td>
+                                <td><input type="text" id="credit121" /></td>
+                                <td><input type="text" id="grade_value121" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td><input type="text" id="122" /></td>
+                                <td><input type="text" id="points122" /></td>
+                                <td><input type="text" id="credit122" /></td>
+                                <td><input type="text" id="grade_value122" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="3"><input type="reset" data-theme="b" id="reset12" value="RESET" /></td>
+                            <tr>
+                                <td><input type="text" /></td>
+                                <td colspan="2"><textarea type="text" id="gpa_comment12" readonly></textarea></td>
+                                <td><input class="gpa" type="text" id="gpa12" readonly /></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div id="result" style="">
+                        <table style="display:none;">
+                            <tr>
+                                <td><input type="text" size="6" value="TOTAL" readonly /></td>
+                                <td><input style="" type="text" /></td>
+                                <td><input style="" type="text" size="3" /></td>
+                                <td><input style="margin-left:8px;" type="text" id="sum_credit12" /></td>
+                                <td><input style="margin-left:17px;" type="text" id="sum_grade_value12" size="3" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+        </div>
+
+        <!-- end page  -->
+    </div>
 
 
     <script src="js/ajax.js" type="text/javascript"></script>
-<script>
-         $('#cancel_about').click(function(){
-$('#about_app').slideUp(0500);
-$("body").css("overflow","auto");
-});
-         $("#about_app").click(function(){
-         $("#about").slideToggle();
-             //alert("donne");
-         });
-    
-         $("#help_app").click(function(){
-         $("#help").slideToggle();
-             //alert("donne");
-         });
-        $("#search_button").click(function(){
-         $("#search").slideToggle();
-         $("#search_input").focus();
-             //alert("donne");
-         });
-         $("#info").click(function(){
-             if($('#search').is(":visible"))
-             { $('#search').slideToggle();
-              //$('#menuToggle').find('img').toggle();
-             }
-             else{}
-        // $("#search").slideToggle();
-             //alert("donne");
-         });
-        
-    
+    <script>
+        $('#cancel_about').click(function () {
+            $('#about_app').slideUp(0500);
+            $("body").css("overflow", "auto");
+        });
+        $("#about_app").click(function () {
+            $("#about").slideToggle();
+            //alert("donne");
+        });
+
+        $("#help_app").click(function () {
+            $("#help").slideToggle();
+            //alert("donne");
+        });
+        $("#search_button").click(function () {
+            $("#search").slideToggle();
+            $("#search_input").focus();
+            //alert("donne");
+        });
+        $("#info").click(function () {
+            if ($('#search').is(":visible")) {
+                $('#search').slideToggle();
+                //$('#menuToggle').find('img').toggle();
+            }
+            else { }
+            // $("#search").slideToggle();
+            //alert("donne");
+        });
+
+
     </script>
 </body>
+
 </html>
