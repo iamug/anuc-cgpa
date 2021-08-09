@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>APP</title>
     <meta charset="utf-8" />
     <link rel="icon" href="img/anuc_high.png" />
+    <link rel="apple-touch-icon" href="img/anuc_high.png">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="ANUC CGPA - CGPA Application for All Nations University College (ANUC)." />
     <link rel="manifest" href="manifest.json" />
-    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
-    <script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+    <link defer href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+    <script defer src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script defer src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
     <script>
         $(document).on("swipeleft swiperight", "#demo-page", function (e) {
             // We check if there is no open panel on the page because otherwise
@@ -45,13 +46,13 @@
             }
         });
    /* window.alert(window.screen.height);
-              var height = window.screen.height/2;
-              var width = window.screen.width;
-              alert(width);
-              $("#img_img").css("height",height+"px");
-              $("#img").css("height",height+"px");
-              $("#img").css("width",width+"px");
-              $("#img_img").css("width",width+"px"); */
+                                            var height = window.screen.height/2;
+                                            var width = window.screen.width;
+                                            alert(width);
+                                            $("#img_img").css("height",height+"px");
+                                            $("#img").css("height",height+"px");
+                                            $("#img").css("width",width+"px");
+                                            $("#img_img").css("width",width+"px"); */
     </script>
 
     <!-- Styling -->
@@ -1831,7 +1832,7 @@
     </div>
 
 
-    <script src="js/ajax.js" type="text/javascript"></script>
+    <script defer src="js/ajax.js" type="text/javascript"></script>
     <script>
         $('#cancel_about').click(function () {
             $('#about_app').slideUp(0500);
@@ -1862,6 +1863,16 @@
         });
 
 
+    </script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("./js/service-worker.js")
+                    .then(res => console.log("service worker registered"))
+                    .catch(err => console.log("service worker not registered", err))
+            })
+        }
     </script>
 </body>
 
