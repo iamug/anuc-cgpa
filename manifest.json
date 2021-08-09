@@ -21,7 +21,7 @@
       }
     ],
     "start_url": "index.html",
-    "scope": "/",
+    "scope": "./",
     "display": "standalone",
     "theme_color": "#000000",
     "background_color": "#ffffff"

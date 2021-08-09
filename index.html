@@ -46,26 +46,23 @@
             }
         });
    /* window.alert(window.screen.height);
-                                                      var height = window.screen.height/2;
-                                                      var width = window.screen.width;
-                                                      alert(width);
-                                                      $("#img_img").css("height",height+"px");
-                                                      $("#img").css("height",height+"px");
-                                                      $("#img").css("width",width+"px");
-                                                      $("#img_img").css("width",width+"px"); */
+                                                                                         var height = window.screen.height/2;
+                                                                                         var width = window.screen.width;
+                                                                                         alert(width);
+                                                                                         $("#img_img").css("height",height+"px");
+                                                                                         $("#img").css("height",height+"px");
+                                                                                         $("#img").css("width",width+"px");
+                                                                                         $("#img_img").css("width",width+"px"); */
     </script>
-
-    <!-- Styling -->
     <style>
         * {
             -webkit-user-select: none;
-            /* Prevent copy paste for all elements except text fields */
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            /* set highlight color for user interaction */
             -moz-tap-highlight-color: rgba(0, 0, 0, 0);
-            /* set highlight color for user interaction */
             -ms-touch-action: none;
+            touch-action: none;
             -moz-user-select: -moz-none;
+            user-select: none;
             margin: 0;
             padding: 0;
         }
@@ -94,14 +91,12 @@
         }
 
         @media all and (max-width: 960px) {
-
             .ui-mobile .ui-page {
                 max-height: 100% !important;
                 max-width: 100% !important;
             }
 
             #main ul li>a {}
-
         }
 
         .ui-table-columntoggle-btn {
@@ -130,30 +125,16 @@
 
 <body>
     <div data-url="demo-page" data-role="page" id="demo-page">
-
-        <!--       <div data-role="panel" id="left-panel" data-theme="b">
-        <p>Left reveal panel.</p>
-        <a href="#main" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-right">Close</a>
-    </div><!-- /panel 
-         <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="b">
-        <p>Right push panel.</p>
-        <a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-delete ui-btn-icon-right">Close</a>
-    </div><!-- /panel -->
-
-
         <div data-role="header" data-theme="b" data-position="fixed" class="page_header"
             style="display:inline-block ! important;">
             <h1 style="margin:0 auto; text-align:center;"><a
                     style="padding: 0.7em 0px; text-align:center; margin:0 auto; background-color: inherit; font-size: 1em; border: 0px solid red;"
                     id="cgpa">CGPA</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
                     style=" padding: 0.7em 0px; text-align:center; margin:0 auto; background-color: inherit; font-size: 1em; border: 0px solid red;"
-                    id="cgpa_comment"></a></h1>
-            <a href="#info" id="info" data-transition="slide" data-icon="info" data-role="button" data-iconpos="notext"
-                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon ui-btn-right"></a>
-
-
-        </div><!-- /header -->
-
+                    id="cgpa_comment"></a></h1><a href="#info" id="info" data-transition="slide" data-icon="info"
+                data-role="button" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+                class="ui-nodisc-icon ui-btn-right"></a>
+        </div>
         <div id="main" data-role="main" class="container" role="main">
             <form>
                 <ul data-role="listview">
@@ -184,85 +165,42 @@
                 </ul>
             </form>
         </div>
-        <!--navbar-->
-
-    </div><!-- Main Page -->
-
-    <!-- INFO -->
+    </div>
     <div data-role="page" data-theme="b" class="container page_header" style="margin:0; padding:0;" id="info">
-
         <div>
             <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-                <h1> </h1>
-                <a href="#demo-page" id="back_info" data-transition="slide" data-direction="reverse" data-icon="home"
-                    data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                    panel</a>
-                <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open right panel</a> -->
-            </div><!-- /header -->
-            <input type="button" value="ABOUT" id="about_app" data-role="button" data-icon="info" data-theme="b" />
-            <div id="about" class="container">
-                <br>
+                <h1></h1><a href="#demo-page" id="back_info" data-transition="slide" data-direction="reverse"
+                    data-icon="home" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+                    class="ui-nodisc-icon">Open left panel</a>
+            </div><input type="button" value="ABOUT" id="about_app" data-role="button" data-icon="info"
+                data-theme="b" />
+            <div id="about" class="container"><br>
                 <p><i>created by</i></p><br>
                 <h2 style="color:white;">Aguziendu Ugochukwu &copy;</h2>
-                <p></p>
-                <br><br>
-                <p><i>for</i></p>
-                <br><br>
+                <p></p><br><br>
+                <p><i>for</i></p><br><br>
                 <h3>ALL NATIONS UNIVERSITY COLLEGE</h3>
                 <p>www.anuc.edu.gh</p><br><br><br>
-            </div>
-            <button data-theme="b" data-iconshadow="true" id="help_app"> HELP </button>
-            <div id="help">
+            </div><button data-theme="b" data-iconshadow="true" id="help_app">HELP </button>
+            <div id="help"><br>
+                <p>Swipe right to go back from any page.</p>
+                <p>Swipe left from HOME to switch to INFO page. </p>
                 <br>
-                <p>Swipe >>> to go back from any page.</p>
-                <p>Swipe <<< from HOME to switch to INFO page. </p>
-                        <br>
-                        <p class="text1"> You need to input the grade and credit hours and it will automatically
-                            calculate the GPA of particular semester and then CGPA</p> <br>
-                        <p class="text1"> You can calculate CGPA for 12 semesters</p><br><br><br>
-
+                <p class="text1">You need to input the grade and credit hours and it will automatically
+                    calculate the GPA of particular semester and then CGPA</p><br>
+                <p class="text1">You can calculate CGPA for 12 semesters</p><br><br><br>
             </div>
-
         </div>
     </div>
-    <!--end INFO -->
-
-
-    <!-- ONE -->
-    <!-- <div data-role="page" data-theme="a" title="list" class="container" data-transition="flip" id="one" >
-        <div>
-             <div data-role="header" data-theme="b">
-        <h1> PAGE 1</h1>
-        <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
-    <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open right panel</a>
-    </div><!-- /header 
-        
-            <div id="img_img" style="height:400px; padding:0;  margin:0; border:3px solid black; text-align:center;" data-role="content">
-            <img src="BI/bio-medical-250x250.jpg" id="img" style="width:100%; max-width:100%; padding:0; border:0px solid red; margin: 0 auto; text-align:center;">
-            
-            </div>
-            <div>
-            <h2>MANUAL</h2>
-            <div style="border:2px solid blue; width:100%; height:80%;" >
-                <p> This is the manual for instrument one.   </p>
-                            
-                </div>
-            </div>
-    </div>
-</div> -->
     <div data-role="page" data-transition="flip" data-position="fixed" class="container" id="one">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> ONE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>ONE</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
                 id="gpa_1_1"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
-            <!--  table 1 -->
             <form oninput="loadall();calc();check();" class="bs-example bs-example-form" id="form1" role="form">
                 <div class="container">
                     <table data-role="table" data-mode="columntoggle" class="ui-responsive">
@@ -364,19 +302,15 @@
                             <tr>
                                 <td><input type="text" /></td>
                                 <td colspan="3"><input type="button" id="reset1" data-theme="b" value="RESET"></td>
-
                             </tr>
-
                             <tr>
                                 <td><input type="text" /></td>
                                 <td colspan="2"><textarea type="text" id="gpa_comment" readonly></textarea></td>
                                 <td><input class="gpa" type="text" id="gpa" readonly /></td>
                             </tr>
                         </tbody>
-
                     </table>
-                    <center>
-                    </center>
+                    <center></center>
                     <div id="result" style="">
                         <table class="table" style="display:none;">
                             <tr>
@@ -388,33 +322,21 @@
                             </tr>
                         </table>
                         <table class="table">
-                            <tbody>
-
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
-            </form>
-            <!-- end table -->
-            <br><br><br>
-
+            </form><br><br><br>
         </div>
     </div>
-
-    <!-- TWO -->
-
     <div data-role="page" data-theme="a" data-transition="flip" class="container" id="two">
-        <div data-role="header" data-theme="b" class="page_header" data-position="fixed">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1>TWO </h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+        <div data-role="header" data-theme="b" class="page_header" data-position="fixed"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>TWO </h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
                 data-theme="" id="gpa_2_2"></a>
-
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form2" oninput="load_2();calc2();check2();" role="form">
                 <div class="container" id="table2">
@@ -512,7 +434,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -525,26 +446,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
     </div>
-
-
-
-    <!-- THREE -->
-
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="three">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> THREE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>THREE</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
                 data-theme="" id="gpa_3_3"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form3" oninput="load_3();calc3();check3();" role="form">
                 <div class="container" id="table2">
@@ -642,7 +554,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -655,25 +566,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-        <!-- end page three  -->
     </div>
-
-
-    <!-- FOUR -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="four">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> FOUR</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>FOUR</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
                 data-theme="" id="gpa_4_4"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form4" oninput="load_4();calc4();check4();" role="form">
                 <div class="container" id="table2">
@@ -771,7 +674,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -784,27 +686,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page -->
     </div>
-
-
-
-    <!-- FIVE -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="five">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> FIVE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>FIVE</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em; border: 0px solid red;"
                 data-theme="" id="gpa_5_5"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form5" oninput="load_5();calc5();check5();" role="form">
                 <div class="container" id="table2">
@@ -902,7 +794,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -915,25 +806,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!--end page -->
     </div>
-
-    <!-- SIX -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="six">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> SIX</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>SIX</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
                 id="gpa_6_6"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form6" oninput="load_6();calc6();check6();" role="form">
                 <div class="container" id="table2">
@@ -1031,7 +914,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -1044,26 +926,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page  -->
     </div>
-
-
-    <!-- SEVEN -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="seven">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> SEVEN</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>SEVEN</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
                 id="gpa_7_7"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form7" oninput="load_7();calc7();check7();" role="form">
                 <div class="container" id="table7">
@@ -1161,7 +1034,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -1174,26 +1046,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page  -->
     </div>
-
-
-    <!-- EIGHT -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="eight">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> EIGHT</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>EIGHT</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
                 id="gpa_8_8"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form8" oninput="load_8();calc8();check8();" role="form">
                 <div class="container" id="table8">
@@ -1291,7 +1154,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -1304,26 +1166,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page  -->
     </div>
-
-
-    <!-- NINE -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="nine">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> NINE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>NINE</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
                 id="gpa_9_9"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form9" oninput="load_9();calc9();check9();" role="form">
                 <div class="container" id="table9">
@@ -1421,7 +1274,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -1434,26 +1286,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page  -->
     </div>
-
-
-    <!-- TEN -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="ten">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> TEN</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>TEN</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
                 id="gpa_10_10"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form10" oninput="load_10();calc10();check10();" role="form">
                 <div class="container" id="table10">
@@ -1551,7 +1394,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -1564,26 +1406,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page  -->
     </div>
-
-
-    <!-- ELEVEN -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="eleven">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1> ELEVEN</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>ELEVEN</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
                 id="gpa_11_11"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form11" oninput="load_11();calc11();check11();" role="form">
                 <div class="container" id="table11">
@@ -1681,7 +1514,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -1694,26 +1526,17 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page  -->
     </div>
-
-
-    <!-- TWELVE -->
     <div data-role="page" data-theme="a" data-transition="flip" title="PAGE" class="container" id="twelve">
-        <div data-role="header" data-theme="b" data-position="fixed" class="page_header">
-            <a href="#demo-page" id="back1" data-transition="slide" data-direction="reverse" data-icon="carat-l"
-                data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left
-                panel</a>
-            <h1>TWELVE</h1>
-            <a style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
+        <div data-role="header" data-theme="b" data-position="fixed" class="page_header"><a href="#demo-page" id="back1"
+                data-transition="slide" data-direction="reverse" data-icon="carat-l" data-iconpos="notext"
+                data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+            <h1>TWELVE</h1><a
+                style="float:right; padding: 0.5em 0px; margin-right:5%; background-color: inherit; font-size: 1em;"
                 id="gpa_12_12"></a>
-            <!--    <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open         right panel</a> -->
-        </div><!-- /header -->
-
+        </div>
         <div style="width:100%; padding:0; margin:0; border:0px solid black;">
             <form id="form12" oninput="load_12();calc12();check12();" role="form">
                 <div class="container" id="table12">
@@ -1811,7 +1634,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="result" style="">
                         <table style="display:none;">
                             <tr>
@@ -1824,14 +1646,9 @@
                         </table>
                     </div>
                 </div>
-            </form>
-            <br><br>
+            </form><br><br>
         </div>
-
-        <!-- end page  -->
     </div>
-
-
     <script defer src="js/ajax.js" type="text/javascript"></script>
     <script>
         $('#cancel_about').click(function () {
@@ -1867,8 +1684,7 @@
     <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", function () {
-                navigator.serviceWorker
-                    .register("./service-worker.js")
+                navigator.serviceWorker.register("./service-worker.js")
                     .then(res => console.log("service worker registered"))
                     .catch(err => console.log("service worker not registered", err))
             })
