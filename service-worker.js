@@ -5,16 +5,16 @@
 
 const staticDevCoffee = "anuc-cgpa";
 const assets = [
-  "/",
-  "/index.html",
-  "/css/jquery.mobile-1.4.5.min.css",
-  "/js/ajax.js",
-  "/js/jquery-2.1.4.min.js",
-  "/js/jquery.mobile-1.4.5.min.js",
-  "/img/anuc_high-192.png",
+  "./",
+  "./index.html",
+  "./css/jquery.mobile-1.4.5.min.css",
+  "./js/ajax.js",
+  "./js/jquery-2.1.4.min.js",
+  "./js/jquery.mobile-1.4.5.min.js",
+  "./img/anuc_high-192.png",
   "/img/anuc_high-512.png",
-  "/img/anuc_high.png",
-  "/img/anuc_medium.png",
+  "./img/anuc_high.png",
+  "./img/anuc_medium.png",
 ];
 
 self.addEventListener("install", (installEvent) => {
