@@ -46,13 +46,13 @@
             }
         });
    /* window.alert(window.screen.height);
-                                            var height = window.screen.height/2;
-                                            var width = window.screen.width;
-                                            alert(width);
-                                            $("#img_img").css("height",height+"px");
-                                            $("#img").css("height",height+"px");
-                                            $("#img").css("width",width+"px");
-                                            $("#img_img").css("width",width+"px"); */
+                                                 var height = window.screen.height/2;
+                                                 var width = window.screen.width;
+                                                 alert(width);
+                                                 $("#img_img").css("height",height+"px");
+                                                 $("#img").css("height",height+"px");
+                                                 $("#img").css("width",width+"px");
+                                                 $("#img_img").css("width",width+"px"); */
     </script>
 
     <!-- Styling -->
@@ -1868,7 +1868,7 @@
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", function () {
                 navigator.serviceWorker
-                    .register("./js/service-worker.js")
+                    .register("./service-worker.js")
                     .then(res => console.log("service worker registered"))
                     .catch(err => console.log("service worker not registered", err))
             })
