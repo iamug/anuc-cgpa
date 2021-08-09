@@ -12,7 +12,7 @@ const assets = [
   "./js/jquery-2.1.4.min.js",
   "./js/jquery.mobile-1.4.5.min.js",
   "./img/anuc_high-192.png",
-  "/img/anuc_high-512.png",
+  "./img/anuc_high-512.png",
   "./img/anuc_high.png",
   "./img/anuc_medium.png",
 ];
